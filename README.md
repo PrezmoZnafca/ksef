@@ -4,7 +4,7 @@ Dwa niezależne komponenty + folder roboczy na Pulpicie:
 
 1. **Skrypt przeglądarkowy** — zakładka (bookmarklet) w przeglądarce, klikana ręcznie, bez
    instalowania żadnego rozszerzenia:
-   - `tampermonkey/ksef-auto-pobieranie-bookmarklet.js` (czytelne źródło) +
+   - `bookmarklet/ksef-auto-pobieranie-bookmarklet.js` (czytelne źródło) +
      `ksef-bookmarklet-url.txt` (wygenerowany URL do wklejenia jako zakładka)
 
    Po Twoim ręcznym zalogowaniu do KSeF i kliknięciu zakładki pokazuje panel z wyborem zakresu dat (ten / poprzedni /
@@ -40,7 +40,7 @@ rozróżnia wielkości liter w nazwach folderów).
 
 ### Bookmarklet (bez rozszerzenia)
 
-1. Otwórz plik [`tampermonkey/ksef-bookmarklet-url.txt`](tampermonkey/ksef-bookmarklet-url.txt)
+1. Otwórz plik [`bookmarklet/ksef-bookmarklet-url.txt`](bookmarklet/ksef-bookmarklet-url.txt)
    w edytorze tekstu, zaznacz całą zawartość (jedna długa linia zaczynająca się od
    `javascript:`) i skopiuj.
 2. W Chrome: prawy klik na pasku zakładek → **Dodaj stronę** (Add page). Jako **Nazwa** wpisz
@@ -50,7 +50,7 @@ rozróżnia wielkości liter w nazwach folderów).
 4. Jeśli kiedyś zmieni się kod źródłowy (`ksef-auto-pobieranie-bookmarklet.js`), trzeba
    wygenerować nowy `ksef-bookmarklet-url.txt` (wymaga zainstalowanego Node.js):
    ```
-   node tampermonkey/generate-bookmarklet.js
+   node bookmarklet/generate-bookmarklet.js
    ```
    i zaktualizować URL zakładki w przeglądarce (edytuj zakładkę → wklej nową zawartość pliku).
 

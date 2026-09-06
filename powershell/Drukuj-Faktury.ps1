@@ -8,8 +8,8 @@
       KSEF\zip archiwum  - oryginalne paczki .zip z Downloads (kopia zapasowa)
       KSEF\log.txt       - historia działania (przydatna gdy okno się zamknie po błędzie)
 
-    Uruchamiaj po zakończeniu pobierania w przeglądarce (skrypt Tampermonkey
-    ksef-auto-pobieranie.user.js). Po starcie okno samo synchronizuje nowe paczki .zip
+    Uruchamiaj po zakończeniu pobierania w przeglądarce (bookmarklet
+    ksef-auto-pobieranie-bookmarklet.js). Po starcie okno samo synchronizuje nowe paczki .zip
     z Downloads do "do druku". Wybierz zakres dat i kliknij "Drukuj" - skrypt scali pasujące
     faktury w jeden plik PDF (dopełniając nieparzyste faktury pustą stroną, żeby przy druku
     dwustronnym żadna faktura nie skleiła się z sąsiednią na jednej kartce) i wydrukuje go
