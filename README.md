@@ -59,6 +59,8 @@ rozróżnia wielkości liter w nazwach folderów).
 1. W Chrome wejdź na `chrome://settings/downloads` i **wyłącz** opcję "Pytaj gdzie zapisać każdy
    plik przed pobraniem" — inaczej każde pobranie paczki .zip zatrzyma się na oknie systemowym,
    którego skrypt nie potrafi obsłużyć.
+0. Na nowym komputerze uruchom dwuklikiem `Zainstaluj wymagane programy.bat` — zainstaluje
+   SumatraPDF i mutool przez winget (kroki 2 i 3 poniżej wtedy nie są potrzebne).
 2. SumatraPDF już zainstalowany (`%LOCALAPPDATA%\SumatraPDF\SumatraPDF.exe`) — skrypt PowerShell
    znajduje go automatycznie, nic więcej nie trzeba robić.
 3. `mutool` (do scalania faktur w jeden plik przed drukiem) już zainstalowany przez
