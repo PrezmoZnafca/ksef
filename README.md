@@ -74,7 +74,8 @@ rozróżnia wielkości liter w nazwach folderów).
    PDF, przejdzie między stronami listy (obsługuje paginację), aż pobierze wszystkie nowe faktury
    z wybranego zakresu do Downloads. Log widać na żywo w panelu.
 3. Po zakończeniu ("Koniec listy faktur. Zakończono.") uruchom aplikację — dwuklik na skrót
-   **"Drukuj faktury KSeF"** na Pulpicie (bez okna konsoli w tle), albo w PowerShell:
+   **"Drukuj faktury KSeF"** na Pulpicie (bez okna konsoli w tle), albo na dowolnym komputerze
+   dwuklik na `Drukuj faktury KSeF.bat` w głównym folderze repo, albo w PowerShell:
    ```powershell
    powershell -ExecutionPolicy Bypass -File "c:\Users\48665\Desktop\ksef\powershell\Drukuj-Faktury.ps1"
    ```
