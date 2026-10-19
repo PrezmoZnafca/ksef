@@ -14,7 +14,7 @@ Dwa niezależne komponenty + folder roboczy na Pulpicie:
    KSeF) jako PDF, pomijając te już pobrane wcześniej (pamięta po numerze KSeF). Paczki .zip
    lądują w normalnym folderze **Downloads** (Chrome).
 2. **`powershell/Drukuj-Faktury.ps1`** — aplikacja (okno) uruchamiana ręcznie po zakończeniu
-   pobierania. Przy starcie sama synchronizuje nowe paczki .zip z Downloads do
+   pobierania. Przy starcie sama synchronizuje nowe paczki .zip (i pojedyncze PDF-y faktur KSeF) z Downloads do
    `Pulpit\KSEF\do druku` i pokazuje listę oczekujących faktur. Wybierz zakres dat (bieżący /
    poprzedni / następny miesiąc albo własny zakres) i kliknij "Drukuj" — skrypt scala pasujące
    faktury (w kolejności dat wystawienia) w **jeden plik PDF** i drukuje go jako **pojedyncze

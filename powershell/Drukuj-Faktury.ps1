@@ -89,13 +89,30 @@ function Write-Log {
     [System.Windows.Forms.Application]::DoEvents()
 }
 
-# --- synchronizacja nowych paczek .zip z Downloads do "do druku" ---
+# --- synchronizacja nowych paczek .zip i pojedynczych PDF z Downloads do "do druku" ---
 function Sync-Downloads {
     if (-not (Test-Path $DownloadsFolder)) {
         Write-Log "UWAGA: folder Downloads nie istnieje: $DownloadsFolder - pomijam synchronizację."
         return
     }
-    $zipFiles = Get-ChildItem -Path $DownloadsFolder -Filter '*.zip' -File
+
+    # pojedyncze PDF-y faktur pobrane bez paczki .zip (tylko z nazwą w formacie KSeF)
+    $loosePdfs = @(Get-ChildItem -Path $DownloadsFolder -Filter '*.pdf' -File | Where-Object { $_.Name -match $ksefPattern })
+    foreach ($pdf in $loosePdfs) {
+        $target = Join-Path $doDrukuFolder $pdf.Name
+        if ((Test-Path $target) -or (Test-Path (Join-Path $wydrukowaneFolder $pdf.Name))) {
+            Write-Log "Pojedynczy PDF $($pdf.Name): już był pobrany wcześniej - pomijam (zostaje w Downloads)."
+            continue
+        }
+        try {
+            Move-Item -Path $pdf.FullName -Destination $target -Force
+            Write-Log "Zaimportowano pojedynczy PDF $($pdf.Name) -> 'do druku'."
+        } catch {
+            Write-Log "UWAGA: nie udało się przenieść $($pdf.Name): $_"
+        }
+    }
+
+    $zipFiles = @(Get-ChildItem -Path $DownloadsFolder -Filter '*.zip' -File)
     if ($zipFiles.Count -eq 0) {
         Write-Log 'Synchronizacja: brak nowych paczek .zip w Downloads.'
         return
